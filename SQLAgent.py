@@ -1,5 +1,6 @@
 from langgraph.graph import StateGraph, END
 from langgraph.checkpoint.memory import InMemorySaver
+from langchain_core.tools import tool
 from langchain_core.messages import HumanMessage,SystemMessage,AnyMessage,ToolMessage
 from typing import TypedDict, Annotated
 import operator
@@ -24,6 +25,7 @@ class SQLAgent:
         self.memory = InMemorySaver()
         self.graph = SQLAgent_graph.compile(checkpointer=self.memory)
         self.tools = { tool.name : tool for tool in tools}
+        self.model = model.bind_tools(tools)
 
     def is_tool_call(self, state: SQLAgentState):
 
