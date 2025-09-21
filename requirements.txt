@@ -1,0 +1,11 @@
+langgraph
+langgraph-checkpoint-sqlite
+langchain
+langchain_community
+langchain_ollama
+langchain_huggingface
+langsmith
+transformers
+torch
+scikit-learn
+sentence-transformers
