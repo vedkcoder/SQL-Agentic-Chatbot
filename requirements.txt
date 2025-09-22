@@ -9,3 +9,6 @@ transformers
 torch
 scikit-learn
 sentence-transformers
+pypdf
+pymupdf
+pandas
